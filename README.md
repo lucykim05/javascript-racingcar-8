@@ -203,31 +203,33 @@ class Input {
 
 ```
 src/
-├── App.js                 # 메인 실행
-├── domain/               # 비즈니스 로직 (게임 규칙, 핵심 로직)
-│   ├── Car.js           # 자동차 객체
-│   └── Game.js          # 게임 진행 로직
-├── view/                # 입출력 (사용자와의 상호작용)
-│   ├── Input.js         # 입력 처리
-│   └── Output.js        # 출력 처리
-└── validator/           # 검증 로직
-    └── Validator.js
+├── App.js                 # 프로그램 메인 실행 (전체 흐름 제어)
+├── entity/                # 비즈니스 로직 (게임 규칙, 핵심 로직)
+│   ├── Car.js             # 자동차 객체
+│   └── Game.js            # 게임 진행 및 상태 관리
+├── controller/            # 입출력 제어
+│   ├── Input.js           # 사용자 입력
+│   └── Output.js          # 결과 출력
+├── utils/                 # 공통 유틸리티 및 검증 로직
+│   └── Validator.js       # 유효성 검증
+└── constants/             # 상수 관리
+    └── constants.js       # 공통 상수
 ```
 
 계층 아키텍처에 따라서 계층 분리를 추가로 해보면 다음과 같다.
 
-### Presentation Layer(`view`)
+### Presentation Layer(`controller`)
 
 - 사용자 입출력
 - Console을 이용하여 입출력 처리
 - `Input.js`, `Output.js`
 
-### Application Layer(`App.js`, `validator`)
+### Application Layer(`App.js`, `utils`)
 
 - 입력 검증
 - 메인 실행
 
-### Domain Layer(`domain`)
+### Domain Layer(`entity`)
 
 - 자동차와 게임 규칙
 - 다른 계층에 독립적

@@ -1,7 +1,7 @@
-import Input from './view/Input.js';
-import Output from './view/Output.js';
-import Validator from './validator/Validator.js';
-import Game from './domain/Game.js';
+import Input from './controller/Input.js';
+import Output from './controller/Output.js';
+import Validator from './utils/Validator.js';
+import Game from './entity/Game.js';
 
 class App {
   async run() {
