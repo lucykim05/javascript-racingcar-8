@@ -193,7 +193,7 @@ class Input {
 
 다이어그램으로 정리하면 다음과 같다.
 
-![클래스 다이어그램](https://raw.githubusercontent.com/lucykim05/image/main/KakaoTalk_20251022_190520621.png)
+![클래스 다이어그램](https://raw.githubusercontent.com/lucykim05/image/main/precourse2.png)
 
 ## 계층 분리
 
