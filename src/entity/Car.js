@@ -18,3 +18,5 @@ class Car {
     return this.name;
   }
 }
+
+export default Car;
