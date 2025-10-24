@@ -183,11 +183,11 @@ class Output {
 
 ```js
 class Input {
-  static async readNames() {
+  static async getNames() {
     //입력 프롬프트(자동차 이름)
   }
 
-  static async readCount() {
+  static async getCount() {
     //입력 프롬프트(시도할 횟수)
   }
 }
