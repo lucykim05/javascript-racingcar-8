@@ -2,6 +2,7 @@ import Input from './controller/Input.js';
 import Output from './controller/Output.js';
 import Validator from './utils/Validator.js';
 import Game from './entity/Game.js';
+import { MissionUtils } from '@woowacourse/mission-utils';
 
 class App {
   async run() {
@@ -27,7 +28,7 @@ class App {
       const winners = game.getWinners();
       Output.printWinners(winners);
     } catch (error) {
-      Console.print(error.message);
+      MissionUtils.Console.print(error.message);
       throw error;
     }
   }
