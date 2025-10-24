@@ -8,8 +8,8 @@ class App {
   async run() {
     try {
       //입력
-      const names = await Input.readNames();
-      const count = await Input.readCount();
+      const names = await Input.getNames();
+      const count = await Input.getCount();
 
       //검증
       Validator.validateNames(names);

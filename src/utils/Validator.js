@@ -15,7 +15,7 @@ class Validator {
     }
 
     const uniqueNames = new Set(names);
-    if (uniqueNames.length !== names.length) {
+    if (uniqueNames.size !== names.length) {
       throw new Error(NAME_DUPLICATE_ERROR);
     }
   }
