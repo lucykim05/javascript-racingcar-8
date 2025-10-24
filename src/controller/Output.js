@@ -1,8 +1,9 @@
 import { MissionUtils } from '@woowacourse/mission-utils';
+import { WINNER_MESSAGE, START_MESSAGE } from '../constants/constants.js';
 
 class Output {
   static printGameStart() {
-    MissionUtils.Console.print('\n실행 결과');
+    MissionUtils.Console.print(START_MESSAGE);
   }
 
   static printResult(cars) {
@@ -13,7 +14,7 @@ class Output {
   }
 
   static printWinners(winners) {
-    MissionUtils.Console.print(`최종 우승자 : ${winners.join(', ')}`);
+    MissionUtils.Console.print(`${WINNER_MESSAGE}${winners.join(', ')}`);
   }
 }
 
