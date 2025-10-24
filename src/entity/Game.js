@@ -25,13 +25,10 @@ class Game {
   }
 
   getWinners() {
-    const maxPosition = Math.max(...this.cars.map((car) => car.getPosition()));
-
-    const winners = this.cars
-      .filter((car) => car.getPosition() === maxPosition)
-      .map((car) => car.getName());
-
-    return winners;
+    const maxPosition = Math.max(...this.cars.map((car) => car.position));
+    return this.cars
+      .filter((car) => car.position === maxPosition)
+      .map((car) => car.name);
   }
 }
 

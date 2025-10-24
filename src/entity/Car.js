@@ -17,13 +17,6 @@ class Car {
   getName() {
     return this.name;
   }
-
-  getWinners() {
-    const maxPosition = Math.max(...this.cars.map((car) => car.position));
-    return this.cars
-      .filter((car) => car.position === maxPosition)
-      .map((car) => car.name);
-  }
 }
 
 export default Car;
