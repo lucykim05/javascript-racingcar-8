@@ -6,11 +6,11 @@
 
 - [x] 저장소 포크하고 클론
 - [x] README.md에 구현할 기능 목록 정리
-- [ ] Git 커밋 단위 기능 목록단위로 추가하고, 커밋 메시지 작성
-- [ ] indent depth를 3이 넘지 않도록 구현한다.
-- [ ] 3항 연산자를 쓰지 않는다.
-- [ ] 단일 책임 원칙
-- [ ] Jest를 활용하여 테스트 코드로 확인한다.
+- [x] Git 커밋 단위 기능 목록단위로 추가하고, 커밋 메시지 작성
+- [x] indent depth를 3이 넘지 않도록 구현한다.
+- [x] 3항 연산자를 쓰지 않는다.
+- [x] 단일 책임 원칙
+- [x] Jest를 활용하여 테스트 코드로 확인한다.
 
 <br>
 
@@ -75,7 +75,10 @@
 - 출력
 
 <br>
-위와 같이 구분하기로 하였다.
+위와 같이 구분하기로 하였고, 상태는 다음과 같이 변화한다.
+<br>
+
+![상태 다이어그램](https://raw.githubusercontent.com/lucykim05/image/main/precourse2_dia.png)
 
 ### App
 
@@ -197,7 +200,7 @@ class Input {
 
 다이어그램으로 정리하면 다음과 같다.
 
-![클래스 다이어그램](https://raw.githubusercontent.com/lucykim05/image/main/precourse2.png)
+![클래스 다이어그램](https://raw.githubusercontent.com/lucykim05/image/main/precourse2_diagram.png)
 
 ## 계층 분리
 
