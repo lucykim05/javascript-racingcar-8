@@ -1,5 +1,9 @@
 # javascript-racingcar-precourse
 
+## > 📝 [Notion 정리 문서](https://amplified-pot-cae.notion.site/Week2-29375c00010a80ad9115c938847997cf?source=copy_link)
+
+학습내용, 구현 과정, 리팩토링 정리해놓은 문서입니다.
+
 ## 요구사항
 
 ### 과제 진행 요구 사항
@@ -244,3 +248,43 @@ Presentation → Application → Domain
 ```
 
 - Domain Layer는 다른 계층에 의존하지 않음
+
+## 테스트
+
+Jest를 활용하여 단위테스트를 진행하였다. 단위테스트는 `Input.js`, `Output.js`를 제외한 `Car`, `Game`, `Validator`에 대해서 진행하였고, 테스트 내용은 다음과 같다.
+
+### Car
+
+1. 생성자 테스트
+2. `move` 테스트
+   - randomNum이 4이상이면 전진, 미만이면 정지
+3. `get` 테스트
+   - `getName`이 이름 return
+   - `getPosition`이 위치 return
+
+### Game
+
+1. 생성자 테스트
+2. `round` 테스트
+   - 한 라운드에 모든 차 이동 시도
+   - 여러 라운드 진행 시나리오 실행
+3. `play` 테스트
+   - count 만큼 round 진행
+4. `getWinners`테스트
+   - 단독 우승자 시나리오 실행
+   - 공동 우승자 시나리오 실행(2명 중 2명 우승)
+   - 공동 우승자 시나리오 실행(3명 중 2명 우승)
+   - 모두가 제자리일 때 공동 우승 시나리오 실행
+
+### Validator
+
+1. `validateNames` 테스트
+   - 정상 통과
+   - 빈 이름 에러 발생
+   - 5글자 초과 에러 발생
+   - 5글자는 통과
+   - 중복 이름 에러 발생
+2. `validateCount` 테스트
+   - 정상 통과
+   - 최소값 미만 에러 발생
+   - 숫자가 아니면 에러 발생

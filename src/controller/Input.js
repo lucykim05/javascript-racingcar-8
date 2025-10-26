@@ -1,18 +1,18 @@
 import { MissionUtils } from '@woowacourse/mission-utils';
+import {
+  INPUT_COUNT_MESSAGE,
+  INPUT_NAME_MESSAGE,
+} from '../constants/constants';
 
 class Input {
   static async getNames() {
-    const input = await MissionUtils.Console.readLineAsync(
-      '경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)\n'
-    );
+    const input = await MissionUtils.Console.readLineAsync(INPUT_NAME_MESSAGE);
 
     return input.split(',').map((name) => name.trim());
   }
 
   static async getCount() {
-    const input = await MissionUtils.Console.readLineAsync(
-      '시도할 횟수는 몇 회인가요?\n'
-    );
+    const input = await MissionUtils.Console.readLineAsync(INPUT_COUNT_MESSAGE);
 
     return Number(input);
   }
