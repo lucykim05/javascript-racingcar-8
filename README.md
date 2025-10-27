@@ -94,6 +94,38 @@ class App {
 }
 ```
 
+### GameController
+
+```js
+class GameController {
+  async start() {
+    try {
+    } catch {}
+  }
+
+  async getValidatedInputs() {
+    Validator;
+    //검증된 이름, 시도횟수 가져오기
+  }
+
+  playGame(names, count) {
+    //names, count로 game 객체 만들고, 실행
+  }
+
+  playRound(game) {
+    //각 round의 결과 출력
+  }
+
+  showWinners(game) {
+    //우승자 출력
+  }
+
+  handleError(error) {
+    //error 출력
+  }
+}
+```
+
 ### Car
 
 자동차 객체
@@ -204,23 +236,25 @@ class Input {
 
 다이어그램으로 정리하면 다음과 같다.
 
-![클래스 다이어그램](https://raw.githubusercontent.com/lucykim05/image/main/precourse2_diagram.png)
+![클래스 다이어그램](https://raw.githubusercontent.com/lucykim05/image/main/precourse2_class.png)
 
 ## 계층 분리
 
 ```
 src/
-├── App.js                 # 프로그램 메인 실행 (전체 흐름 제어)
-├── entity/                # 비즈니스 로직 (게임 규칙, 핵심 로직)
-│   ├── Car.js             # 자동차 객체
-│   └── Game.js            # 게임 진행 및 상태 관리
-├── controller/            # 입출력 제어
-│   ├── Input.js           # 사용자 입력
-│   └── Output.js          # 결과 출력
-├── utils/                 # 공통 유틸리티 및 검증 로직
-│   └── Validator.js       # 유효성 검증
-└── constants/             # 상수 관리
-    └── constants.js       # 공통 상수
+├── App.js                     # 메인 실행
+├── controller/
+│   ├── Input.js               # 사용자 입력 담당
+│   ├── Output.js              # 출력 담당
+│   └── GameController.js      # 게임 전체 흐름 제어
+├── entity/
+│   ├── Game.js                # 핵심 게임 로직
+│   └── Car.js                 # 자동차 객체
+├── utils/
+│   └── Validator.js           # 검증 로직
+└── constants/
+    └── constants.js
+
 ```
 
 계층 아키텍처에 따라서 계층 분리를 추가로 해보면 다음과 같다.
@@ -229,7 +263,7 @@ src/
 
 - 사용자 입출력
 - Console을 이용하여 입출력 처리
-- `Input.js`, `Output.js`
+- `Input.js`, `Output.js`, `GameController.js`
 
 ### Application Layer(`App.js`, `utils`)
 
@@ -288,3 +322,5 @@ Jest를 활용하여 단위테스트를 진행하였다. 단위테스트는 `Inp
    - 정상 통과
    - 최소값 미만 에러 발생
    - 숫자가 아니면 에러 발생
+
+### GameController
